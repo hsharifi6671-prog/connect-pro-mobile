@@ -1,0 +1,11 @@
+Connect Pro Mobile 1.0.1
+
+اصلاحات ساخت:
+- حذف android.notification نامعتبر از تنظیمات Expo
+- انتقال آیکن اعلان به config plugin رسمی expo-notifications
+- حذف config plugin غیرضروری expo-av از مرحله Prebuild
+- افزودن versionCode اندروید
+- افزودن appVersionSource به eas.json
+- اعتبارسنجی خودکار تصاویر و Expo config
+- اجرای محلی expo prebuild در GitHub Actions برای نمایش خطای دقیق
+- ساخت خودکار APK روی هر Push به main

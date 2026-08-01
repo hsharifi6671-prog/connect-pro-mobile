@@ -1,8 +1,10 @@
+const projectId = process.env.EXPO_PUBLIC_EAS_PROJECT_ID || process.env.EXPO_PROJECT_ID;
+
 module.exports = {
   expo: {
     name: 'Connect Pro',
     slug: 'connect-pro-mobile',
-    version: '1.0.0',
+    version: '1.0.1',
     orientation: 'portrait',
     icon: './assets/icon.png',
     userInterfaceStyle: 'light',
@@ -23,36 +25,33 @@ module.exports = {
     },
     android: {
       package: 'com.websoltan.connectpro',
+      versionCode: 2,
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
         backgroundColor: '#0C5849'
       },
-      permissions: ['RECORD_AUDIO', 'POST_NOTIFICATIONS'],
-      notification: {
-        icon: './assets/notification-icon.png',
-        color: '#0C5849'
-      }
+      permissions: ['RECORD_AUDIO', 'POST_NOTIFICATIONS']
     },
     plugins: [
       'expo-secure-store',
-      'expo-notifications',
+      [
+        'expo-notifications',
+        {
+          icon: './assets/notification-icon.png',
+          color: '#0C5849'
+        }
+      ],
       [
         'expo-image-picker',
         {
           photosPermission: 'برای ارسال تصویر در گفتگو به دسترسی تصاویر نیاز است.',
           cameraPermission: 'برای ثبت و ارسال تصویر به دوربین نیاز است.'
         }
-      ],
-      [
-        'expo-av',
-        {
-          microphonePermission: 'برای ارسال پیام صوتی به دسترسی میکروفن نیاز است.'
-        }
       ]
     ],
     extra: {
       eas: {
-        projectId: process.env.EXPO_PUBLIC_EAS_PROJECT_ID || undefined
+        projectId
       }
     }
   }

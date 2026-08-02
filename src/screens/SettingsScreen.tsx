@@ -43,8 +43,8 @@ export function SettingsScreen() {
 
   useFocusEffect(useCallback(() => { load(); }, [load]));
 
-  const patch = <K extends keyof PluginSettings>(key: K, value: PluginSettings[K]) => {
-    setSettings((current) => current ? { ...current, [key]: value } : current);
+  const patch = (key: keyof PluginSettings, value: PluginSettings[keyof PluginSettings]) => {
+    setSettings((current) => (current ? { ...current, [key]: value } as PluginSettings : current));
   };
 
   const save = async () => {

@@ -4,7 +4,7 @@ module.exports = {
   expo: {
     name: 'Connect Pro',
     slug: 'connect-pro-mobile',
-    version: '1.0.1',
+    version: '1.0.2',
     orientation: 'portrait',
     icon: './assets/icon.png',
     userInterfaceStyle: 'light',
@@ -25,7 +25,7 @@ module.exports = {
     },
     android: {
       package: 'com.websoltan.connectpro',
-      versionCode: 2,
+      versionCode: 3,
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
         backgroundColor: '#0C5849'
